@@ -114,5 +114,5 @@ def tutor_pagina(id):
     return render_template('tutor.html', Tutor=tutor, Alumnos=alumnos)
 
 if __name__ == '__main__':
-    app.run(debug=True,port=5001)
+    app.run()
 
