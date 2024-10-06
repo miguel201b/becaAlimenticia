@@ -88,9 +88,7 @@ def guardar_todos():
 
 @app.route('/')
 def index():
-    tutores = obt_tutores()
-    tutores_dict = (tutor.to_dict() for tutor in tutores)
-    return jsonify(tutores_dict)
+    return 'aplicacion web para filtrar a los alumnos que recibiran la beca alimenticia'
 
 @app.route('/<string:id>')
 def tutor_pagina(id):
