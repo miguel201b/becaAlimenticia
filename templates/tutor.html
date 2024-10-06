@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priorizar Alumnos - Apoyo Alimenticio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* Estilos personalizados */
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            /* Aseguramos que el body ocupe toda la altura */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #004d99;
+            color: white;
+            padding: 15px 0;
+        }
+        .header .logo img {
+            height: 50px;
+        }
+        .footer {
+            background-color: #004d99;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+        }
+        .priority-select {
+            width: 120px;
+        }
+        @media (max-width: 768px) {
+            .priority-select {
+                width: 100px;
+            }
+        }
+        /* Estilos para resaltar filas */
+        table tbody tr.priority-Alta td {
+            background-color: #f8d7da !important; /* Rojo claro */
+        }
+
+        table tbody tr.priority-Media td {
+            background-color: #fff3cd !important; /* Amarillo claro */
+        }
+
+        table tbody tr.priority-Baja td {
+            background-color: #d4edda !important; /* Verde claro */
+        }
+        /* Barra de Progreso Fija al Top */
+        .progress-container {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #ffffffcc; /* Fondo semi-transparente */
+            padding: 5px 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        }
+
+        .footer {
+            background-color: #004d99;
+            color: white;
+            padding: 20px 0;  /* Ajustamos para asegurarnos de que haya espacio */
+            position: relative;
+            width: 100%;
+            height: 60px;  /* Altura definida para el cálculo preciso */
+        }
+
+        main {
+            margin-bottom: 100px; /* Ajuste de margen inferior para que no se superponga con el footer */
+        }
+
+
+        /* Indicador visual para filas modificadas */
+        tr.modified {
+            border: 2px solid #ffc107; /* Borde amarillo para indicar modificación */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de Progreso Fija al Top -->
+    <div class="progress-container">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressBar">0 / 0 (0%)</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Institución">
+            </div>
+            <div class="tutor-info">
+                <h5>Tutor: <strong>{{ Tutor.nombre }}</strong></h5>
+            </div>
+            <div class="logout">
+                <button class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <h2 class="mb-4 text-center">Priorizar Alumnos para Apoyo Alimenticio</h2>
+
+        <!-- Tabla de Alumnos -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Número de Cuenta</th>
+                        <th>Prioridad</th>
+                        <th>Necesidad<br>Especial</th>
+                        <th>Comentarios</th>
+                        <th>Enviar</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for alumno in Alumnos %}
+                    <tr class="priority-{% if alumno.prioridad == 1 %}Alta{% elif alumno.prioridad == 2 %}Media{% elif alumno.prioridad == 3 %}Baja{% endif %}">
+                        <!-- Mostrar el nombre completo del alumno -->
+                        <td>{{ alumno.nombre }}</td>
+
+                        <!-- Mostrar el número de cuenta del alumno -->
+                        <td>{{ alumno.cuenta }}</td>
+
+                        <!-- Prioridad: mostrar la prioridad si existe o permitir seleccionar -->
+                        <td>
+                            <select class="form-select priority-select" aria-label="Prioridad">
+                                <option value="" disabled {% if alumno.prioridad is none %}selected{% endif %}>Seleccionar</option>
+                                <option value="Alta" {% if alumno.prioridad == 1 %}selected{% endif %}>Alta</option>
+                                <option value="Media" {% if alumno.prioridad == 2 %}selected{% endif %}>Media</option>
+                                <option value="Baja" {% if alumno.prioridad == 3 %}selected{% endif %}>Baja</option>
+                            </select>
+                        </td>
+
+                        <!-- Checkbox para necesidad especial -->
+                        <td class="text-center">
+                            <input class="form-check-input need-special" type="checkbox" id="needSpecial{{ alumno.cuenta }}" {% if alumno.necesidad_especial %}checked{% endif %}>
+                        </td>
+
+                        <!-- Comentarios: mostrar si ya existen o permitir ingresarlos -->
+                        <td>
+                            <input type="text" class="form-control comentarios" placeholder="Comentarios" value="{{ alumno.comentarios if alumno.comentarios is not none else '' }}">
+                        </td>
+
+                        <!-- Botón para enviar datos de la fila -->
+                        <td>
+                            <button class="btn btn-primary enviar-datos" data-cuenta="{{ alumno.cuenta }}">Guardar Alumno</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+
+        <!-- Botón de Guardar Todos -->
+        <div class="d-flex justify-content-center my-4">
+            <button class="btn btn-warning me-3" id="saveAllBtn"><i class="fas fa-save"></i> Guardar Todos</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>Universidad Nacional Autónoma de México (UNAM), DGCCH. Todos los derechos reservados 2024.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script>
+        // Función para actualizar la barra de progreso
+        function updateProgress() {
+            const totalAlumnos = document.querySelectorAll('tbody tr').length;
+            let priorizados = 0;
+            document.querySelectorAll('.priority-select').forEach(select => {
+                if (select.value !== '' && select.value !== 'Seleccionar') {
+                    priorizados += 1;
+                }
+            });
+            const porcentaje = totalAlumnos === 0 ? 0 : Math.round((priorizados / totalAlumnos) * 100);
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = porcentaje + '%';
+            progressBar.setAttribute('aria-valuenow', porcentaje);
+            progressBar.textContent = `${priorizados} / ${totalAlumnos} (${porcentaje}%)`;
+        }
+
+        // Función para resaltar la fila según la prioridad seleccionada
+        function highlightRow(select) {
+            const priority = select.value;
+            const row = select.closest('tr');
+
+            // Remover clases de prioridad existentes
+            row.classList.remove('priority-Alta', 'priority-Media', 'priority-Baja');
+
+            // Añadir clase según la prioridad seleccionada
+            if (priority === 'Alta') {
+                row.classList.add('priority-Alta');
+            } else if (priority === 'Media') {
+                row.classList.add('priority-Media');
+            } else if (priority === 'Baja') {
+                row.classList.add('priority-Baja');
+            }
+        }
+
+        // Función para marcar una fila como modificada
+        function markAsModified(row) {
+            if (!row.classList.contains('modified')) {
+                row.classList.add('modified');
+            }
+        }
+
+        // Escuchar cambios en las prioridades
+        document.querySelectorAll('.priority-select').forEach(select => {
+            select.addEventListener('change', function() {
+                highlightRow(this);
+                updateProgress();
+                markAsModified(this.closest('tr'));
+            });
+        });
+
+        // Escuchar cambios en los checkboxes de necesidad especial
+        document.querySelectorAll('.need-special').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                updateProgress();
+                markAsModified(this.closest('tr'));
+            });
+        });
+
+        // Escuchar cambios en los campos de comentarios
+        document.querySelectorAll('.comentarios').forEach(input => {
+            input.addEventListener('input', function() {
+                updateProgress();
+                markAsModified(this.closest('tr'));
+            });
+        });
+
+        // Event listener para los botones "Guardar Alumno"
+        document.querySelectorAll('.enviar-datos').forEach(button => {
+            button.addEventListener('click', function() {
+                // Diccionario para mapear los valores de prioridad
+                const prioridadMap = {
+                    'Alta': 1,
+                    'Media': 2,
+                    'Baja': 3
+                };
+                const tr = this.closest('tr');
+                const cuenta = this.getAttribute('data-cuenta');
+                const prioridadText = tr.querySelector('.priority-select').value;
+                const prioridad = prioridadMap[prioridadText] || null;
+                const necesidad = tr.querySelector('.need-special').checked;
+                let comentarios = tr.querySelector('.comentarios').value.trim();
+
+                // Si comentarios está vacío, asignamos null
+                if (comentarios === '') {
+                    comentarios = null;
+                }
+
+                // Validar que se haya asignado una prioridad
+                if (prioridad === null) {
+                    alert('Por favor, selecciona una prioridad antes de guardar los datos.');
+                    return;
+                }
+
+                const data = {
+                    prioridad: prioridad,
+                    comentarios: comentarios
+                };
+
+                // Debugging: Mostrar los datos que se enviarán
+                console.log(`Enviando datos para cuenta ${cuenta}:`, data);
+
+                // Enviar los datos al servidor
+                fetch(`/enviar/${cuenta}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.status === 'success') {
+                        alert('Datos enviados correctamente.');
+                        // Remover la marca de modificación después de guardar
+                        tr.classList.remove('modified');
+                        // Actualizar la barra de progreso después de guardar
+                        updateProgress();
+                    } else {
+                        alert('Error al enviar los datos: ' + (result.message || ''));
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Ocurrió un error al enviar los datos.');
+                });
+            });
+        });
+
+        // Event listener para el botón "Guardar Todos"
+        document.getElementById('saveAllBtn').addEventListener('click', () => {
+            const alumnosModificados = [];
+            const prioridadMap = {
+                'Alta': 1,
+                'Media': 2,
+                'Baja': 3
+            };
+
+            // Iterar sobre todas las filas modificadas
+            document.querySelectorAll('tbody tr.modified').forEach(tr => {
+                const cuenta = tr.querySelector('.enviar-datos').getAttribute('data-cuenta');
+                const prioridadText = tr.querySelector('.priority-select').value;
+                const prioridad = prioridadMap[prioridadText] || null;
+                const necesidad = tr.querySelector('.need-special').checked;
+                let comentarios = tr.querySelector('.comentarios').value.trim();
+
+                // Si comentarios está vacío, asignamos null
+                if (comentarios === '') {
+                    comentarios = null;
+                }
+
+                // Validar que se haya asignado una prioridad
+                if (prioridad !== null) {
+                    alumnosModificados.push({
+                        cuenta: cuenta,
+                        prioridad: prioridad,
+                        necesidad_especial: necesidad,
+                        comentarios: comentarios
+                    });
+                }
+            });
+
+            if (alumnosModificados.length === 0) {
+                alert('No hay alumnos modificados para guardar.');
+                return;
+            }
+
+            // Confirmación antes de enviar
+            if (!confirm(`¿Deseas guardar los cambios de ${alumnosModificados.length} alumnos?`)) {
+                return;
+            }
+
+            // Enviar todos los datos al servidor
+            fetch('/guardar_todos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(alumnosModificados)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.status === 'success') {
+                    alert('Todos los datos han sido guardados correctamente.');
+                    // Remover la marca de modificación después de guardar
+                    alumnosModificados.forEach(alumno => {
+                        const tr = document.querySelector(`tr[data-cuenta="${alumno.cuenta}"]`) || document.querySelector(`tr .enviar-datos[data-cuenta="${alumno.cuenta}"]`).closest('tr');
+                        tr.classList.remove('modified');
+                    });
+                    // Actualizar la barra de progreso después de guardar
+                    updateProgress();
+                } else {
+                    alert('Error al guardar los datos: ' + (result.message || ''));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Ocurrió un error al guardar los datos.');
+            });
+        });
+
+        // Inicializar progreso y resaltar filas al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.priority-select').forEach(select => {
+                highlightRow(select);
+            });
+            updateProgress();
+        });
+    </script>
+
+</body>
+</html>

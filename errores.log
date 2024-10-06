@@ -1,0 +1,238 @@
+2024-10-05 11:56:37,689 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 11:56:37,722 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 11:58:16,588 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/models.py', reloading
+2024-10-05 11:58:16,832 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 11:58:16,847 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:00:02,906 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/models.py', reloading
+2024-10-05 12:00:03,261 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:00:03,268 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:00:46,831 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/app.py', reloading
+2024-10-05 12:00:47,308 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:00:47,314 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:01:13,621 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/app.py', reloading
+2024-10-05 12:01:13,974 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:01:13,979 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:01:25,663 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:01:25] "[33mGET / HTTP/1.1[0m" 404 -
+2024-10-05 12:01:28,679 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:01:28] "[32mGET /tutores HTTP/1.1[0m" 308 -
+2024-10-05 12:01:35,016 - models - ERROR - Error al obtener tutores: (psycopg2.errors.UndefinedTable) relation "tutores" does not exist
+LINE 2: FROM tutores
+             ^
+
+[SQL: SELECT tutores.id AS tutores_id, tutores.nombre AS tutores_nombre, tutores.identificador AS tutores_identificador 
+FROM tutores]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-10-05 12:01:35,058 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:01:35] "[35m[1mGET /tutores/ HTTP/1.1[0m" 500 -
+2024-10-05 12:01:35,132 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:01:35] "GET /tutores/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-10-05 12:01:35,137 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:01:35] "GET /tutores/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-10-05 12:01:35,204 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:01:35] "GET /tutores/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-10-05 12:01:35,209 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:01:35] "GET /tutores/?__debugger__=yes&cmd=resource&f=console.png&s=LcNeHhZ86tbOESivPxno HTTP/1.1" 200 -
+2024-10-05 12:01:52,401 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/models.py', reloading
+2024-10-05 12:01:52,810 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:01:52,816 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:01:54,935 - models - ERROR - Error al obtener tutores: (psycopg2.errors.UndefinedTable) relation "tutores" does not exist
+LINE 2: FROM tutores
+             ^
+
+[SQL: SELECT tutores.id AS tutores_id, tutores.nombre AS tutores_nombre, tutores.identificador AS tutores_identificador 
+FROM tutores]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-10-05 12:01:54,966 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:01:54] "[35m[1mGET /tutores/ HTTP/1.1[0m" 500 -
+2024-10-05 12:01:55,011 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:01:55] "[36mGET /tutores/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-10-05 12:01:55,013 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:01:55] "[36mGET /tutores/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-10-05 12:01:55,042 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:01:55] "GET /tutores/?__debugger__=yes&cmd=resource&f=console.png&s=YSA4B0X9LsPDMsLgDeVY HTTP/1.1" 200 -
+2024-10-05 12:04:19,773 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/models.py', reloading
+2024-10-05 12:04:20,242 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:04:20,248 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:04:34,419 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/app.py', reloading
+2024-10-05 12:04:34,774 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:04:34,779 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:05:09,665 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:05:09] "GET /tutores/ HTTP/1.1" 200 -
+2024-10-05 12:05:11,749 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:05:11] "[35m[1mGET /tutores/3 HTTP/1.1[0m" 500 -
+2024-10-05 12:05:11,790 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:05:11] "GET /tutores/3?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-10-05 12:05:11,791 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:05:11] "GET /tutores/3?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-10-05 12:05:11,797 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:05:11] "GET /tutores/3?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-10-05 12:05:11,800 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:05:11] "GET /tutores/3?__debugger__=yes&cmd=resource&f=console.png&s=vywG6I98hRQAldfxb28w HTTP/1.1" 200 -
+2024-10-05 12:06:32,814 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:06:32] "GET /tutores/ HTTP/1.1" 200 -
+2024-10-05 12:06:49,462 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:06:49] "GET /tutores/ HTTP/1.1" 200 -
+2024-10-05 12:07:57,287 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:07:57] "[35m[1mGET /tutores/3 HTTP/1.1[0m" 500 -
+2024-10-05 12:07:57,332 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:07:57] "[36mGET /tutores/3?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-10-05 12:07:57,332 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:07:57] "[36mGET /tutores/3?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-10-05 12:07:57,341 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:07:57] "[36mGET /tutores/3?__debugger__=yes&cmd=resource&f=console.png&s=vywG6I98hRQAldfxb28w HTTP/1.1[0m" 304 -
+2024-10-05 12:08:51,772 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/models.py', reloading
+2024-10-05 12:08:52,266 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:08:52,276 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:08:54,579 - models - ERROR - Error al obtener datos por ID: (psycopg2.errors.UndefinedFunction) operator does not exist: character varying = integer
+LINE 3: WHERE becas.tutores.identificador = 3 
+                                          ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: SELECT becas.tutores.id AS becas_tutores_id, becas.tutores.nombre AS becas_tutores_nombre, becas.tutores.identificador AS becas_tutores_identificador 
+FROM becas.tutores 
+WHERE becas.tutores.identificador = %(identificador_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'identificador_1': 3, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-10-05 12:08:54,671 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:08:54] "[33mGET /tutores/3 HTTP/1.1[0m" 404 -
+2024-10-05 12:09:36,898 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:09:36] "[33mGET /tutores/R=SS02iAo2dxna2 HTTP/1.1[0m" 404 -
+2024-10-05 12:09:58,145 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/app.py', reloading
+2024-10-05 12:09:58,679 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:09:58,688 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:09:58,694 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:09:58] "[33mGET /tutores/R=SS02iAo2dxna2 HTTP/1.1[0m" 404 -
+2024-10-05 12:09:59,383 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:09:59] "[33mGET /tutores/R=SS02iAo2dxna2 HTTP/1.1[0m" 404 -
+2024-10-05 12:10:20,972 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/app.py', reloading
+2024-10-05 12:10:21,403 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:10:21,411 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:10:21,417 - werkzeug - INFO - 127.0.0.1 - - [05/Oct/2024 12:10:21] "[33mGET /tutores/R=SS02iAo2dxna2 HTTP/1.1[0m" 404 -
+2024-10-05 12:10:45,080 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-05 12:10:45,081 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:10:45,081 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:10:45,296 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:10:45,302 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:10:57,351 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-05 12:10:57,351 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:10:57,352 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:10:57,568 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:10:57,573 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:11:01,628 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/app.py', reloading
+2024-10-05 12:11:01,671 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:11:01,894 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:11:01,900 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:11:18,452 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-05 12:11:18,452 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:11:18,453 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:11:18,674 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:11:18,679 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:17:49,652 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-05 12:17:49,652 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:17:49,652 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:17:49,889 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:17:49,895 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:18:06,892 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-05 12:18:06,893 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:18:06,893 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:18:07,110 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:18:07,115 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:18:57,023 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-05 12:18:57,024 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:18:57,024 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:18:57,248 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:18:57,253 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:19:27,910 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-05 12:19:27,910 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:19:27,910 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:19:28,144 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:19:28,149 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:19:44,685 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-05 12:19:44,686 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:19:44,686 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:19:45,182 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:19:45,188 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:19:56,294 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/app.py', reloading
+2024-10-05 12:19:56,345 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:19:59,678 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-10-05 12:19:59,678 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:19:59,678 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:19:59,900 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:19:59,905 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:33:34,567 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-10-05 12:33:34,568 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:33:34,569 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:33:34,811 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:33:34,819 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:33:40,879 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/app.py', reloading
+2024-10-05 12:33:40,921 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:33:50,122 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-05 12:33:50,123 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:34:53,126 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-10-05 12:34:53,126 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:34:53,127 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:34:53,354 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:34:53,362 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:35:28,735 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/app.py', reloading
+2024-10-05 12:35:28,781 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:35:29,175 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:35:29,183 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:35:34,972 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-10-05 12:35:34,972 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:35:34,972 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:35:35,209 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:35:35,215 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:35:44,300 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/app.py', reloading
+2024-10-05 12:35:44,342 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:35:58,904 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:35:58,910 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:36:25,185 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/models.py', reloading
+2024-10-05 12:36:25,557 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:36:25,565 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:36:30,032 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-10-05 12:36:30,032 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:36:30,032 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:36:30,263 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:36:30,268 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:36:57,582 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/models.py', reloading
+2024-10-05 12:36:57,623 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:36:57,958 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:36:57,963 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:37:01,709 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-10-05 12:37:01,709 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:37:01,709 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:37:01,930 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:37:01,935 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:37:37,240 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:37:37,246 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:37:44,304 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-10-05 12:37:44,304 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:37:44,305 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:37:44,539 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:37:44,543 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:38:06,778 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/models.py', reloading
+2024-10-05 12:38:06,837 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:38:07,190 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:38:07,196 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:38:09,376 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-10-05 12:38:09,377 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:38:09,377 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:38:09,613 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:38:09,618 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:39:21,772 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-05 12:39:21,772 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:39:21,772 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:39:22,005 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:39:22,010 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:39:39,201 - werkzeug - INFO -  * Detected change in '/Users/miguelhernandez/Library/CloudStorage/OneDrive-EscuelaNacionalColegiodeCienciasyHumanidades,UNAM/2025-1/becaAlimenticia/app.py', reloading
+2024-10-05 12:39:39,256 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:39:39,587 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:39:39,592 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:39:45,575 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-05 12:39:45,575 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:39:45,575 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:39:45,799 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:39:45,805 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:40:02,543 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-10-05 12:40:02,543 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-05 12:40:02,543 - werkzeug - INFO -  * Restarting with stat
+2024-10-05 12:40:02,760 - werkzeug - WARNING -  * Debugger is active!
+2024-10-05 12:40:02,765 - werkzeug - INFO -  * Debugger PIN: 749-190-044
+2024-10-05 12:40:25,978 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-05 12:40:25,978 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
